@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create User Cards In DOM</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h1>User's Details</h1>
+    <div class="create_user">
+      <button>Create User</button>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span id="closeModalBtn" class="close">&times;</span>
+        <h2>Create User</h2>
+        <div class="inputs">
+          <label for="id">Id:</label>
+          <input id="id" type="number" placeholder="Enter User ID" required />
+
+          <label for="name">Name:</label>
+          <input id="name" type="text" placeholder="Enter Name" required />
+
+          <label for="username">Username:</label>
+          <input id="username" type="text" placeholder="Enter Username" required />
+
+          <label for="mail">Email:</label>
+          <input id="mail" type="email" placeholder="Enter Email" required />
+        </div>
+
+        <div class="btn">
+           <button>Create</button>  
+        </div>
+      </div>
+    </div>
+
+    <div class="container"></div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

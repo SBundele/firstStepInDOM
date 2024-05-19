@@ -1,0 +1,99 @@
+h1{
+    text-align: center;
+}
+
+.create_user{
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+.create_user > button {
+    padding: 10px 15px;
+    background-color: rgb(10, 10, 145);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  /* overflow: auto; Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 35%; /* Could be more or less, depending on screen size */
+}
+.modal-content > h2{
+    margin-top: 0;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.inputs{
+    width: 33%;
+    margin: auto;
+}
+.inputs > label{
+    display: block;
+    margin: 15px 0 5px;
+}
+.inputs > input{
+    width: 100%;
+    padding: 5px 10px;
+}
+.btn {
+    margin-top: 10px;
+    text-align: center;
+}
+.btn > button{
+    padding: 5px 13px;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+.container{
+    width: 80%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* justify-items: center; */
+    gap: 20px;
+}
+
+.card{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: lightcyan;
+    padding: 10px 20px;
+}
+.card > p{
+    font-size: 18px;
+}
