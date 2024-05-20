@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-Product-Page</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h1>Product Page</h1>
+    <div class="options">
+      <div class="filter">
+        <label for="filter">Filter: </label>
+        <select name="filter" id="filter">
+          <option value="all" selected>All</option>
+          <option value="men's clothing">Men's Clothing</option>
+          <option value="jewelery">Jewellery</option>
+          <option value="electronics">Electronics</option>
+          <option value="women's clothing">Women's clothing</option>
+        </select>
+      </div>
+
+      <div class="sorting">
+        <label for="price">Sort By Price: </label>
+        <select name="price_sort" id="price">
+          <option value="choose" selected>Choose</option>
+          <option value="asc">Ascending</option>
+          <option value="des">Descending</option>
+        </select>
+      </div>
+
+      <div class="popular">
+        <label for="popular">Sort by Reviews: </label>
+        <select name="Popularity" id="popular">
+          <option value="choose" selected>Choose</option>
+          <option value="asc">Ascending</option>
+          <option value="des">Descending</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="container"> </div>
+    
+    <script src="./js/script.js"></script>
+  </body>
+</html>
