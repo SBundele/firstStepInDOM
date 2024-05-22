@@ -276,7 +276,6 @@ let updatedProducts;
 // Product creation
 function createProducts(product) {
   return `
-  <div class="card">
     <div class="card-img">
       <img src=${product.image} alt=${product.category}>
     </div>
@@ -286,14 +285,18 @@ function createProducts(product) {
       <p>${product.description}</p>
       <p><span>Category:</span> ${product.category}</p>
       <p><span>Price</span> ₹${product.price}</p>
-    </div>
-  </div>
-`
+    </div>`;
 }
 
 // Product mapping
 function mapProducts(products) {
-  container.innerHTML = products.map(createProducts)
+  container.innerHTML = null;
+  products.map((product) => {
+    let div = document.createElement("div");
+    div.setAttribute("class", "card");
+    div.innerHTML = createProducts(product);
+    container.append(div);
+  });
 }
 
 // Filter by category functionality implemented
@@ -303,7 +306,7 @@ function filterProducts() {
     mapProducts(products);
   } else {
     const filterProducts = products.filter((el) => el.category === value);
-    updatedProducts = filterProducts
+    updatedProducts = filterProducts;
     mapProducts(filterProducts);
   }
 }
@@ -312,24 +315,24 @@ mapProducts(products);
 filterVal.addEventListener("change", filterProducts);
 
 // Sort By Price Functionality implemented
- 
-function ascPriceSorting(products){
+
+function ascPriceSorting(products) {
   const sortedProducts = products.toSorted((a, b) => a.price - b.price);
-  return sortedProducts
+  return sortedProducts;
 }
 
-function desPriceSorting(products){
+function desPriceSorting(products) {
   const sortedProducts = products.toSorted((a, b) => b.price - a.price);
-  return sortedProducts
+  return sortedProducts;
 }
 
 function sortByPrice() {
   const val = price.value;
   if (val === "choose") {
-    if(filterVal.value !== "all"){
+    if (filterVal.value !== "all") {
       mapProducts(updatedProducts);
-    }else{
-      mapProducts(products)
+    } else {
+      mapProducts(products);
     }
   } else if (val === "asc" && filterVal.value !== "all") {
     let sortedProducts = ascPriceSorting(updatedProducts);
@@ -363,27 +366,25 @@ function desPopularSorting(products) {
   return sortedProducts;
 }
 
-
 function sortByPopularity() {
   const val = popular.value;
   if (val === "choose") {
-    if(filterVal.value !== all){
-      mapProducts(updatedProducts)
-    }else{
+    if (filterVal.value !== all) {
+      mapProducts(updatedProducts);
+    } else {
       mapProducts(products);
     }
-    
-  } else if (val === "asc" && filterVal.value !== 'all') {
-    let sortedProducts = ascPopularSorting(updatedProducts)
+  } else if (val === "asc" && filterVal.value !== "all") {
+    let sortedProducts = ascPopularSorting(updatedProducts);
     mapProducts(sortedProducts);
-  } else if (val === "des" && filterVal.value !== 'all') {
-    let sortedProducts = desPopularSorting(updatedProducts)
+  } else if (val === "des" && filterVal.value !== "all") {
+    let sortedProducts = desPopularSorting(updatedProducts);
     mapProducts(sortedProducts);
-  }else{
-    if(val === 'asc'){
+  } else {
+    if (val === "asc") {
       let sortedProducts = ascPopularSorting(products);
       mapProducts(sortedProducts);
-    }else if (val === 'des'){
+    } else if (val === "des") {
       let sortedProducts = desPopularSorting(products);
       mapProducts(sortedProducts);
     }
